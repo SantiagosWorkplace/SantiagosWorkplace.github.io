@@ -7,7 +7,7 @@ h1 {
     text-align: center;
     background-color: darkslategrey;
     color: antiquewhite;
-    padding: 50px;
+    padding: 20px;
 }
 
 h2 {
@@ -40,14 +40,15 @@ nav li:hover {
 }
 
 img {
-    width: 100px;
-    height: 200px;
+    width: 150px;
+    margin-left: 5px;
+    height: 100px;
     object-fit: cover;
 }
 
 .contenido {
     display: flex;
-    margin: 60px;
+    margin: 20px;
 
 }
 
@@ -58,11 +59,11 @@ img {
 }
 
 .secciones {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
     display: flex;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
 }
 
 .Menu-secundario {
