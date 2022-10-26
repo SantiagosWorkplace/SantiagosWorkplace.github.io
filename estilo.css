@@ -48,7 +48,9 @@ img {
 
 .contenido {
     display: flex;
-    margin: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 
@@ -68,17 +70,18 @@ img {
 
 .Menu-secundario {
     width: 20%;
+    text-decoration-color: antiquewhite;
     text-align: center;
     background-color: darkslategrey;
     color: antiquewhite;
-    padding: 50px;
+    padding-top: 60px;
 
 }
 
 .Menu-secundario a {
     display: block;
     text-align: center;
-    color: black;
+    color:antiquewhite;
     margin-bottom: 20px;
 }
 
