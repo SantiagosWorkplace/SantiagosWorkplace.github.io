@@ -4,25 +4,36 @@
 <head>
     <title>Pagina para Web1</title>
     <link rel="stylesheet" type=" text/css" href="estilo.css">
+    <script src="funciones.js"></script>
 </head>
 
 <body>
-    <h1>Pagina Web de Santiago Lucero </h1>
-    <nav>
-        <ul>
-            <li><a href="">Inicio </a> </li>
-            <li><a href="">Generacion </a> </li>
-            <li><a href="">Consola </a> </li>
-            <li><a href="">Contacto</a> </li>
-        </ul>
-    </nav>
+    <header>
+        <h1><img src="./img/Icono.webp" alt="Logo_de_pagina_ia" width="50px" height="50px">Pagina Web de Santiago Lucero </h1>
+        <nav>
+            <li><a href="index.html">Inicio </a> </li>
+            <li><a href="">Generaciones </a>
+                <ul>
+                    <li> <a href="Generaciones/gen1.html">Generacion 1</a></li>
+                    <li> <a href="Generaciones/gen2.html">Generacion 2</a></li>
+                    <li> <a href="Generaciones/gen3.html">Generacion 3</a></li>
+                    <li> <a href="Generaciones/gen4.html">Generacion 4</a></li>
+                    <li> <a href="Generaciones/gen5.html">Generacion 5</a></li>
+                    <li> <a href="Generaciones/gen6.html">Generacion 6</a></li>
+                    <li> <a href="Generaciones/gen7.html">Generacion 7</a></li>
+                    <li> <a href="Generaciones/gen8.html">Generacion 8</a></li>
+                    <li> <a href="Generaciones/gen9.html">Generacion 9</a></li>
+                </ul>
+            </li>
+            <li><a href="formulario.html">Contacto</a> </li>
+        <nav>
+    </header>
     <div class="contenido">
-        
         <div class="articulos">
             <h2>PLAY STATION 2</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/PS2.png">
+                    <img src="./img/PS2.png" alt="1" width="200" height="200">
                 </div>
                 <p>La PlayStation 2 es la segunda videoconsola de sobremesa producida por Sony Computer Entertainment,
                     y la tercera consola de Sony en ser diseñada por Ken Kutaragi. Además de ser la sucesora de la
@@ -40,12 +51,12 @@
                     pesar del anuncio,
                     se continuaron produciendo nuevos juegos para la consola hasta finales de 2013, estos fueron FIFA 14
                     y Pro Evolution Soccer 2014.</p>
-                
+
             </div>
             <h2>XBOX (ORIGINAL)</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/Xbox.jpg">
+                    <img src="./img/Xbox.jpg" alt="1" width="200" height="200">
                 </div>
                 <p>Xbox es una videoconsola doméstica y la primera entrega de la serie de videoconsolas Xbox fabricada
                     por Microsoft.
@@ -66,12 +77,12 @@
                     la Xbox se construyó a partir de componentes estándar de ordenadores personales,
                     utilizando variaciones de Microsoft Windows y DirectX como sistema operativo para soportar los
                     juegos y la reproducción de medios.</p>
-               
+
             </div>
             <h2>NINTENDO GAMECUBE</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/GameCube.png">
+                    <img src="./img/GameCube.png" alt="1" width="200" height="200">
                 </div>
                 <p>Nintendo GameCube, es la quinta consola de sobremesa hecha por Nintendo. Es la sucesora del Nintendo
                     64 y la predecesora del Wii.
@@ -83,12 +94,12 @@
                     sistema tiene la forma parecida a la de un cubo.
                     Es además la primera consola de Nintendo que no cuenta en su fecha de lanzamiento con un juego de
                     Mario, mascota oficial de la compañía.</p>
-               
+
             </div>
             <h2>SEGA DREAMCAST</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/SegaDreamcast.png">
+                    <img src="./img/SegaDreamcast.png" alt="1" width="200" height="200">
                 </div>
                 <p>Dreamcast es la quinta y última videoconsola de sobremesa producida por Sega. Perteneciente a la
                     sexta generación de videoconsolas,
@@ -114,37 +125,29 @@
                     Después de un cambio de dirección, Sega anunció el cese de producción de Dreamcast a partir del 31
                     de marzo de 2001 y su reestructuración para convertirse en un desarrollador independiente.
                     En total se vendieron 9,13 millones de consolas a nivel mundial.</p>
-                
+
             </div>
         </div>
         <div class="Menu-secundario">
-            <a href="gen1-3.html">Generaciones (1ra a 3ra GEN)<img src="./img/c.png" alt="1" width="200" height="200"></a>
-            <a href="gen4-5.html">Generaciones (4ta a 5ta GEN)<img src="./img/x.png" alt="2" width="200" height="200"></a>
-            <a href="gen6-7.html">Generaciones (6ta a 7ma GEN)<img src="./img/z.png" alt="3" width="200" height="200"></a>
-            <a href="gen8-9.html">Generaciones (8ta a 9ma GEN)<img src="./img/v.png" alt="3" width="200" height="200"></a>
+
         </div>
     </div>
     <div class="carousel">
-            <button id="retroceder"> Retroceder </button>
-            <div id="imagen"></div>
-            <button id="avanzar">. Avanzar .</button>
-        </div>
-        <div class="controles">
-            <button id="play">Reproducir</button>
-            <button id="stop" disabled>Detener</button>
-        </div>        
+        <button id="retroceder"><img src="./img/c.png"></button>
+        <img id="imagen" src="">
+        <button id="avanzar"><img src="./img/c.png"></button>
+    </div>
+    <div class="controles">
+        <button id="play">Reproducir</button>
+        <button id="stop" disabled>Detener</button>
+    </div>
     </div>
     <footer>
         <p>Santiago Felipe Lucero 2022</p>
-        <button type="button"
-    onclick="document.getElementById('FechaYHora').innerHTML = Date()">
-    La fecha y Hora</button>
-    <p id="FechaYHora"></p>
-      </footer>
+        <button type="button" onclick="document.getElementById('FechaYHora').innerHTML = Date()">
+            La fecha y Hora</button>
+        <p id="FechaYHora"></p>
+    </footer>
 </body>
 
 </html>
-
-
-
-

@@ -1,6 +1,46 @@
 * {
     padding: 0px;
     margin: 0px;
+    background-color:#C5D5E4 ;
+}
+
+header {
+    margin: auto;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+    list-style: none;
+}
+nav{
+    background-color:#466362 ;
+}
+nav li a {
+    background-color: black;
+    color: wheat;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav li a:hover{
+    background-color: #777;
+
+}
+
+nav > li {
+    float: left;
+}
+
+nav li ul{
+    display: none ;
+    position: absolute;
+    min-width: 140px;
+}
+
+nav li:hover>ul{
+    display: block;
 }
 
 h1 {
@@ -17,42 +57,13 @@ h2 {
     padding: 20px;
 }
 
-nav ul {
-    background-color: lightslategrey;
-    width: 100%;
-    list-style-type: none;
-    text-align: center;
-}
-
-nav li {
-    display: inline-flex;
-}
-
-nav a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    width: 150px;
-}
-
-nav li:hover {
-    background-color: silver;
-}
-
-imga {
-    width: 150px;
-    margin-left: 5px;
-    height: 100px;
-    object-fit: cover;
-}
-
-
-
 .contenido {
     display: flex;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    background-color:#C5D5E4 ;
+
 
 }
 
@@ -82,7 +93,7 @@ imga {
 .Menu-secundario a {
     display: block;
     text-align: center;
-    color:antiquewhite;
+    color: antiquewhite;
     margin-bottom: 10px;
 }
 

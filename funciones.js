@@ -1,11 +1,11 @@
 window.onload = function () {
     const IMAGENES = [
-        './img/descarga21.jpg',
-        './img/descarga22.jpg',
-        './img/descarga23.jpg',
-        './img/descarga24.jpg',
-        './img/descarga25.jpg',
-        './img/descarga26.jpg'
+        './img/1.jpeg',
+        './img/2.jpeg',
+        './img/3.jpeg',
+        './img/4.jpeg',
+        './img/5.jpeg',
+        './img/6.png',
     ];
     const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
     let posicionActual = 0;
@@ -35,7 +35,7 @@ window.onload = function () {
     }
 
     function renderizarImagen () {
-        $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+        $imagen.src = IMAGENES[posicionActual];
     }
 
     function playIntervalo() {
