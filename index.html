@@ -3,13 +3,13 @@
 
 <head>
     <title>Pagina para Web1</title>
-    <link rel="stylesheet" type=" text/css" href="estilo.css">
+    <link rel="stylesheet" type=" text/css" href="./Generaciones/estilo.css">
     <script src="funciones.js"></script>
 </head>
 
 <body>
     <header>
-        <h1><img src="./img/Icono.webp" alt="Logo_de_pagina_ia" width="50px" height="50px">Pagina Web de Santiago Lucero </h1>
+        <h1><img src="./Generaciones/Icono.png" alt="Logo_de_pagina">Pagina Web de Santiago Lucero </h1>
         <nav>
             <li><a href="index.html">Inicio </a> </li>
             <li><a href="">Generaciones </a>
@@ -33,7 +33,7 @@
             <h2>PLAY STATION 2</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/PS2.png" alt="1" width="200" height="200">
+                    <img src="./Generaciones/imgConsolas/PS2.png" alt="1" width="200" height="200">
                 </div>
                 <p>La PlayStation 2 es la segunda videoconsola de sobremesa producida por Sony Computer Entertainment,
                     y la tercera consola de Sony en ser diseñada por Ken Kutaragi. Además de ser la sucesora de la
@@ -56,7 +56,7 @@
             <h2>XBOX (ORIGINAL)</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/Xbox.jpg" alt="1" width="200" height="200">
+                    <img src="./Generaciones/imgConsolas/Xbox.jpg" alt="1" width="200" height="200">
                 </div>
                 <p>Xbox es una videoconsola doméstica y la primera entrega de la serie de videoconsolas Xbox fabricada
                     por Microsoft.
@@ -82,7 +82,7 @@
             <h2>NINTENDO GAMECUBE</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/GameCube.png" alt="1" width="200" height="200">
+                    <img src="./Generaciones/imgConsolas/GameCube.png" alt="1" width="200" height="200">
                 </div>
                 <p>Nintendo GameCube, es la quinta consola de sobremesa hecha por Nintendo. Es la sucesora del Nintendo
                     64 y la predecesora del Wii.
@@ -99,7 +99,7 @@
             <h2>SEGA DREAMCAST</h2>
             <div class="secciones">
                 <div>
-                    <img src="./img/SegaDreamcast.png" alt="1" width="200" height="200">
+                    <img src="./Generaciones/imgConsolas/SegaDreamcast.png" alt="1" width="200" height="200">
                 </div>
                 <p>Dreamcast es la quinta y última videoconsola de sobremesa producida por Sega. Perteneciente a la
                     sexta generación de videoconsolas,
@@ -128,20 +128,21 @@
 
             </div>
         </div>
-        <div class="Menu-secundario">
 
+        <div class="Menu-secundario">
+            <div class="carousel">
+                <button id="retroceder"><img src="./img/atras.png"></button>
+                <img id="imagen" src="">
+                <button id="avanzar"><img src="./img/adelante.png"></button>
+                </div>
+            <div class="controles">
+                <button id="play"><img src="./img/play.png"></button>
+                <button id="stop" disabled><img src="./img/pausa.png"></button>
+            </div>
         </div>
+        
     </div>
-    <div class="carousel">
-        <button id="retroceder"><img src="./img/c.png"></button>
-        <img id="imagen" src="">
-        <button id="avanzar"><img src="./img/c.png"></button>
-    </div>
-    <div class="controles">
-        <button id="play">Reproducir</button>
-        <button id="stop" disabled>Detener</button>
-    </div>
-    </div>
+    
     <footer>
         <p>Santiago Felipe Lucero 2022</p>
         <button type="button" onclick="document.getElementById('FechaYHora').innerHTML = Date()">
@@ -149,5 +150,4 @@
         <p id="FechaYHora"></p>
     </footer>
 </body>
-
 </html>
