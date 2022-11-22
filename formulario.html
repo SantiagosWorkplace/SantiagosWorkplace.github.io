@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type=" text/css" href="estilo.css">
+    <script src="formulario.js"></script>
+    <style>
+        form {
+            padding: 20px;
+            background-color: aquamarine;
+            font-size: 20px;
+            margin: 0px;
+            color: gray;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        li {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        input {
+            border: 0px;
+        }
+
+        .field:hover {
+            color: aquamarine;
+        }
+
+        label {
+            font-size: larger;
+        }
+
+        .conjunto {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="espacio">
+        <form name="conjunto" id="conjunto">
+            <h1>Formulario</h1>
+            <p>Ingrese los datos para enviarle la informacion</p>
+            <div class="campos">
+                <form name="formulario" id="formulario" class="form" onsubmit="return validar()">
+                    <ul class="info">
+                        <li><label>Nombre:</label>
+                            <input onkeyup="validarCampoNombre()" type="text" name="nombre" id="nombre"
+                                class="form-control" placeholder="Ingrese su nombre">
+                        </li>
+                        <li><label>Correo:</label>
+                            <input onkeyup="validarCampoCorreo()" type="text" name="correo" id="correo"
+                                class="form-control" placeholder="Ingrese su correo" novalidate>
+                        </li>
+                        <li><label>Edad:</label>
+                            <input onkeyup="validarCampoEdad()" type="text" name="edad" id="edad" class="form-control"
+                                placeholder="Ingrese su edad">
+                        </li>
+                        <li>
+                            <label>De que marca fue tu primera consola?</label>
+                            <select name="lista" id="lista" class="form-control">
+                                <option value="1">Sony PlayStation</option>
+                                <option value="2">Xbox</option>
+                                <option value="3">Nintendo</option>
+                                <option value="4">Sega</option>
+                                <option value="5">NeoGeo</option>
+                                <option value="6">PC</option>
+                                <option value="7">Mac</option>
+                                <option value="8">Android</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <p>Que generacion considera su favorita?</p>
+                    <ul class="checkbox-ul">
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Primera</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Segunda</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Tercera</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Cuarta</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Quinta</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Sexta</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Septima</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Octava</label>
+                        </label>
+                        <label id="checkbox-label">
+                            <input type="checkbox" id="check-input" class="check-input">Novena</label>
+                        </label>
+                    </ul>
+                    <ul class="submit">
+                        <button type="submit" id="submit" class="submit-button">
+                            <a>Enviar</a> </button>
+                    </ul>
+                </form>
+                <div id="error"></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

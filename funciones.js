@@ -6,8 +6,9 @@ window.onload = function () {
         './img/4.jpeg',
         './img/5.jpeg',
         './img/6.png',
+        
     ];
-    const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;
+    const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
     let posicionActual = 0;
     let $botonRetroceder = document.querySelector('#retroceder');
     let $botonAvanzar = document.querySelector('#avanzar');
