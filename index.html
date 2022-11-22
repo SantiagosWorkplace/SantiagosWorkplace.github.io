@@ -28,12 +28,11 @@
             <li><a href="formulario.html">Contacto</a> </li>
         </nav>
     </header>
-
     <div class="contenido">
         <div class="articulos">
             <h2>Introducción</h2>
             <div class="secciones">
-                <div><img src="./Generaciones/imgConsolas/GBC.webp" alt="1"  width="200"></div>
+                <div><img src="./Generaciones/imgConsolas/GBC.webp" alt="1" height="200"></div>
                 <p>Prácticamente desde hace 50 años convivimos con los videojuegos. Desde principios de la década de los
                     70 del siglo pasado, el mundo ha ido viendo de forma progresiva pequeños pasos en el mundo del
                     entretenimiento electrónico que nos han llevado desde aquéllos viejos Pong de las consolas
@@ -45,7 +44,7 @@
             <h2> ¿Qué es una consola?</h2>
             <div class="secciones">
                 <div>
-                    <img src="./Generaciones/imgConsolas/BannerIndex.jpg" alt="1"  height="200">
+                    <img src="./Generaciones/imgConsolas/BannerIndex.jpg" alt="1" height="200">
                 </div>
                 <p>Una consola es, básicamente, una computadora muy especializada. Dispone de un CPU donde se efectúan
                     sumas y restas que leen la información, audio e imágenes que contiene el videojuego.</p>
@@ -54,7 +53,7 @@
             <h2>¿Cómo funcionan los videojuegos?</h2>
             <div class="secciones">
                 <div>
-                    <img src="./Generaciones/imgConsolas/BannerIndex2.jpg" alt="1"  height="200">
+                    <img src="./Generaciones/imgConsolas/BannerIndex2.jpg" alt="1" width="320" height="200">
                 </div>
                 <p>Una lista de las cosas que una consola de videojuegos actual debe tener:
                     1. Una interfaz con el usuario, es decir, un control. 2. Una o varias memorias RAM. 3. Un núcleo de
@@ -88,18 +87,22 @@
 
             </div>
         </div>
-    </div>
-    <div class="carousel">
-        <div>
-            <button id="retroceder"><img src="./img/atras.png"></button>
-            <img id="imagen" src="">
-            <button id="avanzar"><img src="./img/adelante.png"></button>
+
+        <div class="carousel">
+            <div>
+                <button id="retroceder"><img src="./img/atras.png"></button>
+                <img id="imagen" src="">
+                <button id="avanzar"><img src="./img/adelante.png"></button>
+            </div>
+
+            <div class="controles">
+                <button id="play"><img src="./img/play.png"></button>
+                <button id="stop" disabled><img src="./img/pausa.png"></button>
+            </div>
         </div>
-        <div class="controles">
-            <button id="play"><img src="./img/play.png"></button>
-            <button id="stop" disabled><img src="./img/pausa.png"></button>
-        </div>
+
     </div>
+
     <footer>
         <p>Santiago Felipe Lucero 2022</p>
         <button type="button" onclick="document.getElementById('FechaYHora').innerHTML = Date()">

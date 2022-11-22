@@ -1,7 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
-    
+
 }
 
 header {
@@ -17,34 +17,37 @@ ul {
 }
 
 header nav li a {
-    position: relative;
+    margin: auto;
+    display: flex;
+    float: left;
     background-color: grey;
     color: wheat;
     text-decoration: none;
-    display: flex;
+    padding: 20px 14.7%;
+
 }
 
-nav li a:hover{
+nav li a:hover {
     background-color: #777;
 
 }
 
-nav > li {
-    float:right;
+nav>li {
+
     list-style: none;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-nav li ul{
-    display: none ;
+nav li ul {
+    display: none;
     position: absolute;
     min-width: 140px;
 }
 
-nav li:hover>ul{
+nav li:hover>ul {
     display: block;
 }
 
@@ -62,17 +65,17 @@ h2 {
     padding: 20px;
 }
 
-p{
+p {
     padding-left: 20px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .contenido {
-    display:block;
+    display: block;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color:#C5D5E4 ;
+    background-color: #C5D5E4;
 }
 
 .articulos {
@@ -90,41 +93,27 @@ p{
     padding: 20px;
 }
 
+
+.carousel {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #dbe4ed;
+}
+
+#imagen {
+    margin: auto;
+    width: 640px;
+    padding: 50px;
+    font-family: 'Avenir', sans-serif;
+    color: #33475b;
+}
+
 footer {
+    display: block;
     background-color: #777;
     padding: 10px;
     text-align: center;
     color: white;
-}
-
-.carousel {
-    align-items: center;
-    max-width: 100%;
-    margin:auto ;
-    display: flex;
-}
-
-#imagen {
-    width: 150px;
-    margin-left: 5px;
-    height: 360px;
-    object-fit: cover;
-}
-
-img{
-    text-align:center;
-}
-
-.infinite-progress-container #gaz-infinite-progress {
-    -webkit-transform-origin: left;
-    -ms-transform-origin: left;
-    -o-transform-origin: left;
-    transform-origin: left;
-    width: auto;
-    height: 5px;
-    margin-top: 5px;
-    background-color: #2A2C61;
-    -webkit-box-shadow: 0 2px 5px 0 rgb(40 117 126 / 50%);
-    box-shadow: 0 2px 5px 0 rgb(40 117 126 / 50%);
-    z-index: 120;
 }
