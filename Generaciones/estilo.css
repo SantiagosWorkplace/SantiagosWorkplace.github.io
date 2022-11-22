@@ -21,7 +21,6 @@ header nav li a {
     background-color: grey;
     color: wheat;
     text-decoration: none;
-    padding: 18px 276px;
     display: flex;
 }
 
@@ -33,10 +32,13 @@ nav li a:hover{
 nav > li {
     float:right;
     list-style: none;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav li ul{
-    display: flex;
     display: none ;
     position: absolute;
     min-width: 140px;
@@ -62,6 +64,7 @@ h2 {
 
 p{
     padding-left: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .contenido {
