@@ -63,8 +63,6 @@ h2 {
     margin-left: 20px;
     margin-right: 20px;
     background-color:#C5D5E4 ;
-
-
 }
 
 .articulos {
@@ -100,4 +98,18 @@ footer {
     margin-left: 5px;
     height: 360px;
     object-fit: cover;
+}
+
+.infinite-progress-container #gaz-infinite-progress {
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    -o-transform-origin: left;
+    transform-origin: left;
+    width: auto;
+    height: 5px;
+    margin-top: 5px;
+    background-color: #2A2C61;
+    -webkit-box-shadow: 0 2px 5px 0 rgb(40 117 126 / 50%);
+    box-shadow: 0 2px 5px 0 rgb(40 117 126 / 50%);
+    z-index: 120;
 }
