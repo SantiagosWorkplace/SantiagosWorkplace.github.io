@@ -1,5 +1,5 @@
 
-const patronusuario = /^[a-zA-Z0-9\_\-\ \u00f1\u00d1]{4,16}$/
+const patronusuario = /^[a-zA-Z0-9\_\-\ \u00f1\u00d1]{4,20}$/
 const patronmail = /^\w+@\w+(\.\w{3})$/
 function validar() {
     var errores = [];
