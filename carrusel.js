@@ -6,7 +6,6 @@ window.onload = function () {
         './img/4.jpeg',
         './img/5.jpeg',
         './img/6.png',
-        
     ];
     const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
     let posicionActual = 0;
@@ -17,13 +16,19 @@ window.onload = function () {
     let $botonStop = document.querySelector('#stop');
     let intervalo;
 
+    $botonAvanzar.addEventListener('click', pasarFoto);
+    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonPlay.addEventListener('click', playIntervalo);
+    $botonStop.addEventListener('click', stopIntervalo);
+    render();
+
     function pasarFoto() {
         if(posicionActual >= IMAGENES.length - 1) {
             posicionActual = 0;
         } else {
             posicionActual++;
         }
-        renderizarImagen();
+        render();
     }
 
     function retrocederFoto() {
@@ -32,10 +37,10 @@ window.onload = function () {
         } else {
             posicionActual--;
         }
-        renderizarImagen();
+        render();
     }
 
-    function renderizarImagen () {
+    function render() {
         $imagen.src = IMAGENES[posicionActual];
     }
 
@@ -54,10 +59,4 @@ window.onload = function () {
         $botonPlay.removeAttribute('disabled');
         $botonStop.setAttribute('disabled', true);
     }
-
-    $botonAvanzar.addEventListener('click', pasarFoto);
-    $botonRetroceder.addEventListener('click', retrocederFoto);
-    $botonPlay.addEventListener('click', playIntervalo);
-    $botonStop.addEventListener('click', stopIntervalo);
-    renderizarImagen();
 } 
