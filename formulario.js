@@ -25,9 +25,7 @@ function validar() {
             aux++;
         }
     }
-    if (aux == 5) {
-        errores.push("Debe marcar almenos una opcion");
-    }
+    
     var listaErrores = document.getElementById("error");
     var contenido = document.getElementById("secciones");
     listaErrores.innerHTML = "";
