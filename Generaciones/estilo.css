@@ -78,6 +78,7 @@ p {
     margin-left: 20px;
     margin-right: 20px;
     background-color: #C5D5E4;
+    border: 0px solid #000000;
 }
 
 .articulos {
@@ -93,6 +94,7 @@ p {
     display: flex;
     align-items: center;
     padding: 20px;
+    border: 0px solid #000000;
 }
 
 
