@@ -2,129 +2,239 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type=" text/css" href="estilo.css">
     <script src="formulario.js"></script>
+    <link type="text/css" rel="stylesheet" href="formulario.css">
     <style>
-        form {
-            padding: 20px;
-            background-color: rgb(48, 78, 68);
-            font-size: 20px;
-            margin: 0px;
-            color: rgb(219, 219, 219);
-            border-radius: 70px;
-            width: 300px;
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        li {
-            list-style: none;
-            margin-top: 19px;
-            margin-bottom: 9px;
-            margin-left: 44px;
-            margin-right: 4px;
+        body {
+            height: 800px;
+            background-color: bisque;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        input {
-            border: 144px;
-            padding: 10px;
+        #contenido {
+            width: 100vw;
+            height: auto;
+            background-color: bisque;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
         }
 
-        lista {
-            border: 144px;
-            padding: 10px;
-        }
-
-        .field {
-            border-radius: 3px;
-            padding: 10px;
-        }
-
-        .field:hover {
-            color: aquamarine;
-        }
-
-        label {
-            font-size: larger;
-            margin: 20px;
-        }
-
-        .conjunto {
+        header {
             margin: auto;
+            width: 100%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header nav li a {
+            margin: auto;
+            display: flex;
+            background-color: grey;
+            color: wheat;
+            text-decoration: none;
+            padding: 20px 20px;
+
+        }
+
+        nav li a:hover {
+            background-color: #777;
+
+        }
+
+        nav>li {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 20%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li:hover>ul {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: darkslategrey;
+            color: wheat;
+            padding: 20px;
+        }
+
+        .secciones {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 19px solid gray;
+            border-radius: 5px;
+        }
+
+        .secciones h1 {
+            font-size: 40px;
+        }
+
+        .secciones p {
+            font-size: 20px;
+        }
+
+        .secciones .form ul li {
+            height: 70px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .secciones .form ul li label {
+            font-size: 20px;
+        }
+
+        .secciones .form ul li {
+            height: 30px;
+            width: 400px;
+        }
+
+        .secciones .form ul li select {
+            height: 30px;
+        }
+
+        .form-control {
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        #lista option {
+            text-align: center;
+        }
+
+        .pd {
+            font-size: 20px;
+            color: black;
+            padding: 5px;
+        }
+
+        .fallo {
+            border: 2px solid rgb(172, 0, 0);
+        }
+
+        .checkbox-ul {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        #checkbox-label {
+            font-size: 20px;
+        }
+
+        .secciones .form ul.submit {
+            display: flex;
+            justify-content: center;
+        }
+
+        .secciones .form ul.submit .submit-button {
+            width: 100px;
+            height: 50px;
+            background-color: darkslategrey;
+            color: rgb(255, 255, 255);
+        }
+
+        .error {
+            margin-top: 10px;
+            width: 400px;
+            font-size: 20px;
+            color: rgb(255, 0, 0);
         }
     </style>
 </head>
 
-<body>
-    <div class="espacio">
-        <form name="conjunto" id="conjunto">
+<body id="body">
+    <header>
+        <h1><img src="./Generaciones/Icono.png" alt="Logo_de_pagina">Gorilla News </h1>
+        <nav>
+            <li><a href="index.html">Inicio </a> </li>
+            <li><a href="">Generaciones</a>
+                <ul>
+                    <li> <a href="./gen1.html">Generacion 1</a></li>
+                    <li> <a href="./gen2.html">Generacion 2</a></li>
+                    <li> <a href="./gen3.html">Generacion 3</a></li>
+                    <li> <a href="./gen4.html">Generacion 4</a></li>
+                    <li> <a href="./gen5.html">Generacion 5</a></li>
+                    <li> <a href="./gen6.html">Generacion 6</a></li>
+                    <li> <a href="./gen7.html">Generacion 7</a></li>
+                    <li> <a href="./gen8.html">Generacion 8</a></li>
+                    <li> <a href="./gen9.html">Generacion 9</a></li>
+                </ul>
+            </li>
+            <li><a href="./formulario.html">Contacto</a> </li>
+        </nav>
+    </header>
+    <div id="contenido">
+        <div class="secciones" id="secciones">
             <h1>Formulario</h1>
-            <p>Ingrese los datos para enviarle la informacion</p>
-            <div class="campos">
-                <form name="formulario" id="formulario" class="form" onsubmit="return validar()">
-                    <ul class="info">
-                        <li><label>Nombre:</label>
-                            <input onkeyup="validarCampoNombre()" type="text" name="nombre" id="nombre"
-                                class="form-control" placeholder="Ingrese su nombre">
-                        </li>
-                        <li><label>Correo:</label>
-                            <input onkeyup="validarCampoCorreo()" type="text" name="correo" id="correo"
-                                class="form-control" placeholder="Ingrese su correo" novalidate>
-                        </li>
-                        <li><label>Edad:</label>
-                            <input onkeyup="validarCampoEdad()" type="text" name="edad" id="edad" class="form-control"
-                                placeholder="Ingrese su edad">
-                        </li>
-                        <li>
-                            <label>De que marca fue tu primera consola?</label>
-                            <select name="lista" id="lista" class="form-control">
-                                <option value="1">Sony PlayStation</option>
-                                <option value="2">Xbox</option>
-                                <option value="3">Nintendo</option>
-                                <option value="4">Sega</option>
-                                <option value="5">NeoGeo</option>
-                                <option value="6">PC</option>
-                                <option value="7">Mac</option>
-                                <option value="8">Android</option>
-                            </select>
-                        </li>
-                    </ul>
-                    <p>Que generacion considera su favorita?</p>
+            <p>Ingrese sus datos y lo contactaremos: </p>
+            <form name="formulario" id="formulario" class="form" onsubmit="return validar()">
+                <ul class="info">
+                    <li><label>Nombre:</label>
+                        <input onkeyup="validarCampoNombre()" type="text" name="nombre" id="nombre" class="form-control"
+                            placeholder="Ingrese su nombre">
+                    </li>
+                    <li><label>Correo:</label>
+                        <input onkeyup="validarCampoCorreo()" type="text" name="correo" id="correo" class="form-control"
+                            placeholder="Ingrese su correo" novalidate>
+                    </li>
+                    <li><label>Edad:</label>
+                        <input onkeyup="validarCampoEdad()" type="text" name="edad" id="edad" class="form-control"
+                            placeholder="Ingrese su edad">
+                    </li>
+                    <p>Eliga su plataforma favorita:</p>
                     <ul class="checkbox-ul">
                         <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Primera</label>
+                            <input type="checkbox" id="check-input" class="check-input">Xbox</label>
                         </label>
                         <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Segunda</label>
+                            <input type="checkbox" id="check-input" class="check-input">PlayStation</label>
                         </label>
                         <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Tercera</label>
+                            <input type="checkbox" id="check-input" class="check-input">Nintendo</label>
                         </label>
                         <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Cuarta</label>
+                            <input type="checkbox" id="check-input" class="check-input">Sega</label>
                         </label>
                         <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Quinta</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Sexta</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Septima</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Octava</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Novena</label>
+                            <input type="checkbox" id="check-input" class="check-input">PC MASTER RACE CON RTX4090 E
+                            INTEL I9 DE 13AVA GEN</label>
                         </label>
                     </ul>
                     <ul class="submit">
                         <button type="submit" id="submit" class="submit-button">
                             <a>Enviar</a> </button>
                     </ul>
-                </form>
-                <div id="error"></div>
-            </div>
-        </form>
+            </form>
+            <div id="error"></div>
+            <div id="comentario"></div>
+        </div>
     </div>
 </body>
 

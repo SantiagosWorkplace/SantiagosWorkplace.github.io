@@ -1,11 +1,11 @@
-const patronusuario = /^[a-zA-Z0-9\_\-\ ]{4,200}$/
+
+const patronusuario = /^[a-zA-Z0-9\_\-\ ]{4,16}$/
 const patronmail = /^\w+@\w+(\.\w{3})$/
 function validar() {
     var errores = [];
     var nombre = document.forms["formulario"]["nombre"].value.trim();
     var correo = document.forms["formulario"]["correo"].value.trim();
     var edad = document.forms["formulario"]["edad"].value.trim();
-
     let checks = document.querySelectorAll(".check-input");
     if (nombre == "") {
         errores.push("El campo 'nombre' debe ser rellenado");
@@ -18,8 +18,6 @@ function validar() {
     }
     if (isNaN(edad) || edad == '') {
         errores.push("'Edad' Debe ser un numero");
-    } else if ((edad < 18)) {
-        errores.push("Debe ser mayor de edad");
     }
     var aux = 0;
     for (let i = 0; i < checks.length; i++) {
@@ -30,11 +28,10 @@ function validar() {
     if (aux == 5) {
         errores.push("Debe marcar almenos una opcion");
     }
-    
     var listaErrores = document.getElementById("error");
-    var padre = document.getElementById("conjunto");
+    var contenido = document.getElementById("secciones");
     listaErrores.innerHTML = "";
-    padre.appendChild(listaErrores);
+    contenido.appendChild(listaErrores);
     listaErrores.className = "error";
 
     errores.forEach(element => {
@@ -45,15 +42,12 @@ function validar() {
     });
 
     if (errores.length == 0) {
-            //Elimino la seccion que quiero
-            var objeto = document.getElementById("div2");
+            var objeto = document.getElementById("comentario");
             objeto.innerHTML = "";
-            //Agrego texto
             var texto = document.createElement("p");
-            texto.className = "p-despues";
-            texto.innerHTML = (nombre + "<br> (" + correo + ") <br> de " + edad + " anios <br> Su solicitud fue enviada");
+            texto.className = "pd";
+            texto.innerHTML = (nombre + " (" + correo + ") Su solicitud fue enviada correctamente");
             objeto.appendChild(texto);
-            //Agrego el contenedor con el texto a un elemento padre
             var formulario = document.getElementById("formulario");
             limpiar();
             formulario.reset();
@@ -105,12 +99,6 @@ function validarCampoEdad(){
         aux.classList.remove("correcto");
         aux.classList.add("fallo");
         return false;
-    }else if(edad > 18){
-        aux.classList.remove("fallo");
-        aux.classList.add("correcto");
-    }else if(edad == ""){
-        aux.classList.remove("correcto");
-        aux.classList.add("fallo");
     }
 }
 
