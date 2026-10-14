@@ -369,3 +369,9 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 24px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+@media (max-width: 420px) {
+  .site-header .wrap { gap: 8px; }
+  .logo { font-size: 12px; gap: 8px; }
+  .logo img { width: 28px; height: 28px; }
+}
