@@ -107,7 +107,7 @@ p:last-child { margin-bottom: 0; }
   margin-right: auto; white-space: nowrap;
 }
 .logo img { width: 34px; height: 34px; filter: var(--logo-filter); }
-.logo span { color: var(--accent); }
+.logo-text span { color: var(--accent); }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav > a, .nav-drop > button {
@@ -373,5 +373,6 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 24px; }
 @media (max-width: 420px) {
   .site-header .wrap { gap: 8px; }
   .logo { font-size: 12px; gap: 8px; }
-  .logo img { width: 28px; height: 28px; }
+  .logo img { width: 30px; height: 30px; }
+  .logo .logo-text { display: none; }
 }

@@ -26,7 +26,8 @@
   const estilos = `
     .ver-toggle { display: inline-flex; flex: none; padding: 3px; gap: 2px; border-radius: 999px;
       border: 1px solid var(--border, #bdbdbd); background: var(--surface, #fff); font-family: system-ui, sans-serif; }
-    .ver-toggle button { display: grid; place-items: center; width: 34px; height: 32px; padding: 0; border: 0;
+    .ver-toggle button { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 0;
+      font: 600 13px/1 system-ui, sans-serif;
       border-radius: 999px; background: none; color: var(--muted, #555); cursor: pointer; }
     .ver-toggle button:hover { color: var(--text, #111); background: var(--bg-alt, #eee); }
     .ver-toggle button[aria-pressed="true"] { background: var(--accent, #2f4f4f); color: var(--accent-ink, #fff); cursor: default; }
@@ -49,7 +50,7 @@
     ['2022', '2026'].forEach((v) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.innerHTML = ICONOS[v];
+      b.innerHTML = ICONOS[v] + '<span>' + v + '</span>';
       b.title = v === '2022' ? 'Ver el diseño de 2022' : 'Ver el diseño de 2026';
       b.setAttribute('aria-label', b.title);
       b.setAttribute('aria-pressed', v === actual);
