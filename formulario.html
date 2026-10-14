@@ -1,245 +1,92 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <script src="formulario.js"></script>
-    <link type="text/css" rel="stylesheet" href="formulario.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            height: 800px;
-            background-color: #C5D5E4;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-        #contenido {
-            width: 100vw;
-            height: auto;
-            background-color: #C5D5E4;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        header {
-            margin: auto;
-            width: 100%;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            display: flex;
-            flex-direction: column;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        header nav li a {
-            margin: auto;
-            display: flex;
-            background-color: grey;
-            color: #C5D5E4;
-            text-decoration: none;
-            padding: 20px 20px;
-
-        }
-
-        nav li a:hover {
-            background-color: #777;
-
-        }
-
-        nav>li {
-            list-style: none;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        nav li ul {
-            display: none;
-            position: absolute;
-            min-width: 20%;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav li:hover>ul {
-            display: block;
-        }
-
-        h1 {
-            text-align: center;
-            background-color: darkslategrey;
-            color: #C5D5E4;
-            padding: 20px;
-        }
-
-        .secciones {
-            width: auto;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 19px solid gray;
-            border-radius: 5px;
-        }
-
-        .secciones h1 {
-            font-size: 40px;
-        }
-
-        .secciones p {
-            font-size: 20px;
-        }
-
-        .secciones .form ul li {
-            height: 70px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .secciones .form ul li label {
-            font-size: 20px;
-        }
-
-        .secciones .form ul li {
-            height: 30px;
-            width: 400px;
-        }
-
-        .secciones .form ul li select {
-            height: 30px;
-        }
-
-        .form-control {
-            padding: 5px;
-            border: 1px solid black;
-        }
-
-        #lista option {
-            text-align: center;
-        }
-
-        .pd {
-            font-size: 20px;
-            color: black;
-            padding: 5px;
-        }
-
-        .fallo {
-            border: 2px solid rgb(172, 0, 0);
-        }
-
-        .checkbox-ul {
-            display: flex;
-            flex-direction: column;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        #checkbox-label {
-            font-size: 20px;
-        }
-
-        .secciones .form ul.submit {
-            display: flex;
-            justify-content: center;
-        }
-
-        .secciones .form ul.submit .submit-button {
-            width: 100px;
-            height: 50px;
-            background-color: darkslategrey;
-            color: rgb(255, 255, 255);
-        }
-
-        .error {
-            margin-top: 10px;
-            width: 400px;
-            font-size: 20px;
-            color: rgb(255, 0, 0);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · Gorilla News</title>
+  <meta name="description" content="Escribinos y contanos cuál es tu plataforma favorita.">
+  <link rel="icon" href="Generaciones/Icono.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/main.js"></script>
 </head>
-
-<body id="body">
-    <header>
-        <h1><img src="./Generaciones/Icono.png" alt="Logo_de_pagina">Gorilla News </h1>
-        <nav>
-            <li><a href="index.html">Inicio </a> </li>
-            <li><a href="">Generaciones</a>
-                <ul>
-                    <li> <a href="./gen1.html">Generacion 1</a></li>
-                    <li> <a href="./gen2.html">Generacion 2</a></li>
-                    <li> <a href="./gen3.html">Generacion 3</a></li>
-                    <li> <a href="./gen4.html">Generacion 4</a></li>
-                    <li> <a href="./gen5.html">Generacion 5</a></li>
-                    <li> <a href="./gen6.html">Generacion 6</a></li>
-                    <li> <a href="./gen7.html">Generacion 7</a></li>
-                    <li> <a href="./gen8.html">Generacion 8</a></li>
-                    <li> <a href="./gen9.html">Generacion 9</a></li>
-                </ul>
-            </li>
-            <li><a href="./formulario.html">Contacto</a> </li>
-        </nav>
-    </header>
-    <div id="contenido">
-        <div class="secciones" id="secciones">
-            <h1>Formulario</h1>
-            <form name="formulario" id="formulario" class="form" onsubmit="return validar()">
-                <ul class="info">
-                    <li><label>Nombre:</label>
-                        <input onkeyup="validarCampoNombre()" type="text" name="nombre" id="nombre" class="form-control"
-                            placeholder="Ingrese su nombre">
-                    </li>
-                    <li><label>Correo:</label>
-                        <input onkeyup="validarCampoCorreo()" type="text" name="correo" id="correo" class="form-control"
-                            placeholder="Ingrese su correo" novalidate>
-                    </li>
-                    <li><label>Edad:</label>
-                        <input onkeyup="validarCampoEdad()" type="text" name="edad" id="edad" class="form-control"
-                            placeholder="Ingrese su edad">
-                    </li>
-                    <p>Eliga su plataforma favorita:</p>
-                    <ul class="checkbox-ul">
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Xbox</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">PlayStation</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Nintendo</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">Sega</label>
-                        </label>
-                        <label id="checkbox-label">
-                            <input type="checkbox" id="check-input" class="check-input">PC MASTER RACE CON RTX4090</label>
-                        </label>
-                    </ul>
-                    <ul class="submit">
-                        <button type="submit" id="submit" class="submit-button">
-                            <a>Enviar</a> </button>
-                    </ul>
-            </form>
-            <div id="error"></div>
-            <div id="comentario"></div>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="Generaciones/Icono.png" alt="" width="34" height="34">Gorilla<span>News</span></a>
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <div class="nav-drop">
+          <button type="button" aria-expanded="false" aria-haspopup="true">Generaciones</button>
+          <div class="drop-panel">
+          <a href="gen1.html"><b>01</b><span>Primera generación<small>1972–1983</small></span></a>
+          <a href="gen2.html"><b>02</b><span>Segunda generación<small>1978–1992</small></span></a>
+          <a href="gen3.html"><b>03</b><span>Tercera generación<small>1983–2003</small></span></a>
+          <a href="gen4.html"><b>04</b><span>Cuarta generación<small>1987–1999</small></span></a>
+          <a href="gen5.html"><b>05</b><span>Quinta generación<small>1994–2002</small></span></a>
+          <a href="gen6.html"><b>06</b><span>Sexta generación<small>1998–2013</small></span></a>
+          <a href="gen7.html"><b>07</b><span>Séptima generación<small>2005–2015</small></span></a>
+          <a href="gen8.html"><b>08</b><span>Octava generación<small>2011–2020</small></span></a>
+          <a href="gen9.html"><b>09</b><span>Novena generación<small>2017–hoy</small></span></a>
+          </div>
         </div>
+        <a href="formulario.html" aria-current="page">Contacto</a>
+      </nav>
+      <button class="icon-btn" id="tema" type="button" aria-label="Cambiar tema claro/oscuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
-    <footer>
-        <p>Santiago Felipe Lucero 2022</p>
-        <button type="button" onclick="document.getElementById('FechaYHora').innerHTML = Date()">
-            La fecha y Hora</button>
-        <p id="FechaYHora"></p>
-    </footer>
+  </header>
+  <main id="contenido">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center">
+          <span class="kicker">CONTACTO</span>
+          <h2>Formulario</h2>
+          <p>Dejanos tus datos y contanos con qué jugás.</p>
+        </div>
+        <form class="form-card" id="formulario" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" autocomplete="name" aria-describedby="nombre-hint">
+            <div class="hint" id="nombre-hint"></div>
+          </div>
+          <div class="field">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="tu@correo.com" autocomplete="email" aria-describedby="correo-hint">
+            <div class="hint" id="correo-hint"></div>
+          </div>
+          <div class="field">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Ingresá tu edad" inputmode="numeric" min="1" max="120" aria-describedby="edad-hint">
+            <div class="hint" id="edad-hint"></div>
+          </div>
+          <fieldset class="field">
+            <legend>Elegí tu plataforma favorita</legend>
+            <div class="checks">
+              <label><input type="checkbox" name="plataforma" value="Xbox">Xbox</label>
+              <label><input type="checkbox" name="plataforma" value="PlayStation">PlayStation</label>
+              <label><input type="checkbox" name="plataforma" value="Nintendo">Nintendo</label>
+              <label><input type="checkbox" name="plataforma" value="Sega">Sega</label>
+              <label class="wide"><input type="checkbox" name="plataforma" value="PC Master Race">PC MASTER RACE CON RTX 4090</label>
+            </div>
+          </fieldset>
+          <button class="btn" type="submit">Enviar</button>
+          <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2022–2026 Santiago Felipe Lucero · Gorilla News</p>
+      <div class="clock">
+        <button type="button" id="ver-hora">Ver fecha y hora</button>
+        <output id="fecha-hora" aria-live="polite"></output>
+      </div>
+    </div>
+  </footer>
 </body>
-
 </html>
