@@ -76,7 +76,51 @@
 
     iniciarCarrusel();
     iniciarFormulario();
+    iniciarBotonInstalar();
   });
+
+  // ---------- PWA: service worker y botón "Instalar" ----------
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+
+  let pedidoInstalar = null;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    pedidoInstalar = e;
+    const boton = document.querySelector('#instalar');
+    if (boton) boton.hidden = false;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    pedidoInstalar = null;
+    const boton = document.querySelector('#instalar');
+    if (boton) boton.hidden = true;
+  });
+
+  function iniciarBotonInstalar() {
+    const tema = document.querySelector('#tema');
+    if (!tema) return;
+    const boton = document.createElement('button');
+    boton.className = 'icon-btn';
+    boton.id = 'instalar';
+    boton.type = 'button';
+    boton.title = 'Instalar Gorilla News como app';
+    boton.setAttribute('aria-label', boton.title);
+    boton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>';
+    boton.hidden = !pedidoInstalar;
+    boton.addEventListener('click', async () => {
+      if (!pedidoInstalar) return;
+      pedidoInstalar.prompt();
+      await pedidoInstalar.userChoice;
+      pedidoInstalar = null;
+      boton.hidden = true;
+    });
+    tema.before(boton);
+  }
 
   // ---------- Carrusel ----------
   function iniciarCarrusel() {

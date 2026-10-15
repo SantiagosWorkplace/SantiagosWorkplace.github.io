@@ -142,6 +142,7 @@ p:last-child { margin-bottom: 0; }
   background: none; border: 1px solid var(--border); border-radius: 999px; color: var(--text); cursor: pointer;
 }
 .icon-btn:hover { background: var(--bg-alt); }
+.icon-btn[hidden] { display: none; }
 .icon-btn svg { width: 18px; height: 18px; }
 .menu-btn { display: none; }
 
