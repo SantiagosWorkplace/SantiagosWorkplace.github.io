@@ -1,0 +1,18 @@
+# Gorilla News en Netlify: sitio estático, se publica tal cual desde la raíz del repo.
+[build]
+  publish = "."
+
+# Encabezados de seguridad básicos para todas las páginas
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# El service worker se revisa en cada visita para que las actualizaciones lleguen enseguida
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

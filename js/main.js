@@ -185,14 +185,14 @@
     const form = document.querySelector('#formulario');
     if (!form) return;
 
-    const patronUsuario = /^[a-zA-Z0-9_\- áéíóúÁÉÍÓÚüÜñÑ]{4,20}$/;
+    const patronUsuario = /^[a-zA-Z0-9_\- áéíóúÁÉÍÓÚüÜñÑ]{4,30}$/;
     const patronMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     const reglas = {
       nombre: (v) => v === '' ? 'El campo "Nombre" debe ser rellenado.'
-        : !patronUsuario.test(v) ? 'El nombre debe tener entre 4 y 20 caracteres (letras, números, espacios, - o _).'
+        : !patronUsuario.test(v) ? 'El nombre debe tener entre 4 y 30 caracteres (letras, números, espacios, - o _).'
         : '',
-      correo: (v) => !patronMail.test(v) ? 'El correo es inválido. Volvé a ingresarlo.' : '',
+      correo: (v) => v.length > 100 || !patronMail.test(v) ? 'El correo es inválido. Volvé a ingresarlo.' : '',
       edad: (v) => {
         const n = Number(v);
         return v === '' || !Number.isInteger(n) ? '"Edad" debe ser un número.'
@@ -222,8 +222,9 @@
     });
 
     const mensaje = document.querySelector('#form-msg');
+    const botonEnviar = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const errores = Object.keys(reglas).map(validarCampo).filter(Boolean);
 
@@ -248,6 +249,31 @@
       const nombre = form.elements.nombre.value.trim();
       const correo = form.elements.correo.value.trim();
       const plataformas = [...form.querySelectorAll('input[name="plataforma"]:checked')].map((c) => c.value);
+
+      // Envío a Netlify Forms (incluye form-name y el campo trampa bot-field)
+      botonEnviar.disabled = true;
+      botonEnviar.textContent = 'Enviando…';
+      let enviado = false;
+      try {
+        const resp = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString(),
+        });
+        enviado = resp.ok;
+      } catch (err) {}
+      botonEnviar.disabled = false;
+      botonEnviar.textContent = 'Enviar';
+
+      if (!enviado) {
+        mensaje.classList.add('err');
+        const texto = document.createElement('p');
+        texto.textContent = navigator.onLine
+          ? 'No se pudo enviar el formulario. Probá de nuevo en un rato.'
+          : 'Estás sin conexión. Volvé a enviarlo cuando tengas Internet.';
+        mensaje.appendChild(texto);
+        return;
+      }
 
       mensaje.classList.add('ok');
       const texto = document.createElement('p');
