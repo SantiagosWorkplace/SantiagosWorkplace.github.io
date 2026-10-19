@@ -44,7 +44,16 @@ function validar() {
             objeto.innerHTML = "";
             var texto = document.createElement("p");
             texto.className = "pd";
-            texto.innerHTML = (nombre + " (" + correo + ") Su solicitud fue enviada correctamente");
+            // La versión 2022 se conserva de recuerdo y no envía datos: se deriva al formulario actual
+            texto.textContent = "Esta es la versión 2022 del sitio, que se conserva de recuerdo y no envía mensajes. Para escribirnos usá el ";
+            var enlace = document.createElement("a");
+            enlace.href = "../formulario.html";
+            enlace.textContent = "formulario actual";
+            enlace.addEventListener("click", function () {
+                try { localStorage.setItem("version", "2026"); } catch (e) {}
+            });
+            texto.appendChild(enlace);
+            texto.appendChild(document.createTextNode("."));
             objeto.appendChild(texto);
             var formulario = document.getElementById("formulario");
             limpiar();

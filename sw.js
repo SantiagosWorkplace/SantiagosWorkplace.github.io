@@ -1,7 +1,7 @@
 // Gorilla News — service worker (PWA: instalable y con lectura sin conexión)
 // Al cambiar archivos del sitio, subí VERSION para que los usuarios reciban la caché nueva.
 
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE = `gorilla-${VERSION}`;
 
 // Lo mínimo para que el sitio (2026 y 2022) abra sin Internet. Las imágenes se guardan a medida que se ven.
